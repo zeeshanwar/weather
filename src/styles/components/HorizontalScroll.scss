@@ -1,0 +1,47 @@
+.scroll-container {
+   position: relative;
+   display: flex;
+   align-items: center;
+   width: 100%;
+   overflow: hidden;
+ }
+ 
+ .scroll-content {
+   display: flex;
+   gap: 10px;
+   overflow-x: auto;
+   scroll-behavior: smooth;
+   white-space: nowrap;
+   padding: 10px;
+ }
+ 
+ .scroll-content::-webkit-scrollbar {
+   display: none; // Hide scrollbar
+ }
+ 
+ .scroll-btn {
+   position: absolute;
+   top: 50%;
+   transform: translateY(-50%);
+   background: rgba(255, 255, 0, 0.5);
+   color: black;
+   border: none;
+   cursor: pointer;
+   padding: 10px;
+   font-size: 20px;
+   border-radius: 50%;
+   z-index: 10;
+ }
+ 
+ .scroll-btn.left {
+   left: 0;
+ }
+ 
+ .scroll-btn.right {
+   right: 0;
+ }
+ 
+ .scroll-btn:hover {
+   background: rgba(255, 255, 0, 0.8);
+ }
+ 

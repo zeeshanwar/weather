@@ -1,0 +1,89 @@
+@use '../variables/variables' as *;
+
+.forecast-box {
+  display: flex;  
+  // overflow-x: auto;  
+  white-space: nowrap;  
+  gap: 36px; 
+  padding: 10px; 
+  scroll-snap-type: x mandatory;
+}
+
+.forecast-widget {
+
+  flex: 0 0 auto;  /* Prevent widgets from shrinking */
+  width: 150px; /* Adjust based on your design */
+  scroll-snap-align: start; /* Align items on scroll */
+
+  display: flex; /* Enable flexbox */
+  flex-direction: column; /* Stack elements vertically */
+  align-items: center; /* Center items horizontally */
+  justify-content: center; /* Center items vertically */
+  
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 50px;
+}
+
+.icon-info{
+  display: flex;  
+  align-items: center;
+  gap: 10px;
+  margin: 3px;
+}
+
+.Forecast {
+  margin-top: 3rem;
+  @include no-text-select;
+
+  .widget-container {
+    display: flex;
+    align-items: center;
+    // overflow: hidden;
+    margin-top: 0.5rem;
+    padding-top: 1.5rem;
+
+    .widget {
+      position: relative;
+      cursor: pointer;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      padding: 0.75rem;
+      margin-right: 0.75rem;
+
+      min-width: 115px;
+
+      border: 1px solid var(--secondary-text-color);
+      border-radius: 1rem;
+
+      .day {
+        position: absolute;
+        top: -1.5rem;
+      }
+      .icon-temp {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0.75rem 0;
+        img {
+          width: 40px;
+          margin-right: 0.25rem;
+        }
+      }
+      .wind {
+        margin-top: 0.25rem;
+        display: flex;
+        .speed {
+          margin-right: 0.25rem;
+        }
+        .wind-dir {
+          font-size: 0.8rem;
+          margin-left: 0.25rem;
+        }
+      }
+    }
+  }
+}

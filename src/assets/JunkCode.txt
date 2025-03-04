@@ -1,0 +1,84 @@
+
+
+HourlyForecast
+
+
+      // Working Code
+
+      <div className='forecast-container'>
+         {CustomDataTime.map((time, index) => (
+            <div key={index} className='forecast-widget'>
+               <div className="day">{time.split("T")[0]}</div>
+               <div className="time">{formatTime(time)}</div>
+               <div className="icon-temp">
+                  <div className="icon">
+                  </div>
+               </div>
+               <div className="details">
+                  <div className="temperature">{temperature_2m[index]}°C</div>
+                  <p>Wind: {windspeed_10m[index]} km/h</p>
+                  <p>Humidity: {relative_humidity_2m[index]}%</p>
+                  <p>Visiblity: {visibility[index]} m</p>
+                  <p>Pressure: {pressure_msl[index]} hPa</p>
+                  <p>Cloud Cover: {cloudcover[index]}%</p>
+                  <p>Precipitation: {precipitation[index]} mm</p>
+               </div>
+            </div>
+         ))}
+      </div>
+
+
+      // Another Code
+
+      // <div className='forecast-container'>
+      //    {data.time.slice(0, 10).map((time, index) => (
+      //       <div key={index} className='widget'>
+      //          <div className='day'>{time}</div>
+      //          <div className='time'>{time.split("T")[1]}</div>
+      //          <div className='icon-temp'>
+      //             <div className='icon'>
+      //                {/* <WeatherIcon iconNumber={icon} summary={summary} /> */}
+      //             </div>
+      //             <div className='temperature'>
+      //                {Math.round(temperature_2m[index])} {units.temperature}
+      //             </div>
+      //          </div>
+      //          <div className='precipitation'>
+      //             {Math.round(precipitation[index])} {units.precipitation}
+      //          </div>
+      //          <div className='wind'>
+      //             <div className='speed'>
+      //                {Math.round(windspeed_10m[index])} {units.wind_speed}
+      //             </div>
+      //          </div>
+      //       </div>
+      //    ))}
+      // </div>
+
+
+      // Another Code 2
+
+      //    <div className='forecast-container'>
+
+                     {/* <div className="time"> ◷ {forecast.time}</div>  */}
+
+
+      //      <div className='forecast-widget'>
+      //        {/* <div className="day">{time}</div> */}
+      //        {/* <div className="time">{time}</div> */}
+      //        <div className="icon-temp">
+      //          <div className="icon">
+      //            {/* Add weather icon logic here */}
+      //          </div>
+      //          <div className="temperature">{temperature_2m[0]}°C</div>
+      //        </div>
+      //        <div className="details">
+      //          <p>Wind: {windspeed_10m[0]} km/h</p>
+      //          <p>Humidity: {relative_humidity_2m[0]}%</p>
+      //          <p>Pressure: {pressure_msl[0]} hPa</p>
+      //          <p>Cloud Cover: {cloudcover[0]}%</p>
+      //          <p>Precipitation: {precipitation[0]} mm</p>
+      //        </div>
+      //      </div>
+
+      //  </div>
