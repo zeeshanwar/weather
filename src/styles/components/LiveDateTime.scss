@@ -1,0 +1,41 @@
+.live-datetime {
+
+   display: flex;
+   flex-direction: column;
+   justify-content: space-evenly;
+   align-items: center;
+   // background-color: #1e1e1e;
+   // text-align: center;
+   // box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+   padding: 20px;
+   border-radius: 10px;
+   width: 300px;
+   border: 1px solid var(--secondary-text-color);
+   
+}
+.live-datetime .time {
+
+   font-size: 1.5rem;
+   font-weight: bold;
+   // color: #ffffff;
+}
+.live-datetime .city {
+
+   font-size: 1.5rem;
+   font-weight: bold;
+   // color: #ffffff;
+}
+
+.live-datetime .country {
+
+   font-size: 1rem;
+   // font-weight: bold;
+   // color: #ffffff;
+}
+
+.live-datetime .date {
+   text-align: center;
+   font-size: 1rem;
+   margin-top: 5px;
+   // color: #b0b0b0;
+}

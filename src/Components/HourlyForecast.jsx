@@ -61,8 +61,8 @@ function HourlyForecast({ name, data, units }) {
                </div>
                <div className="icon-temp">
                   <WeatherIcon icon={forecast.WeatherCode} name={forecast.id} size="65" type="Hourly"/>
-                  <div className="temperature">{forecast.temperature}°C</div>
                </div>
+                  <div className="temperature">{forecast.temperature}{units.temperature_2m}</div>
                <div className="details">
                   <div className='icon-info'><ForecastIcon icon="windy" name="windy" size="25" /> {forecast.windSpeed} {units.windspeed_10m}</div>
                   <div className='icon-info'><ForecastIcon icon="humidity" name="windy" size="25" /> {forecast.humidity} {units.relative_humidity_2m}</div>

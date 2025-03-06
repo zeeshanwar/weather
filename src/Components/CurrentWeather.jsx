@@ -9,6 +9,7 @@ import "../styles/components/CurrentWeather.scss";
 import ForecastIcon from '../IconComponents/ForecastIcon';
 import SunriseSunset from './SunriseSunset';
 import WeatherContext from '../Contexts/WeatherContext';
+import LiveDateTime from './LiveDateTime';
 
 function CurrentWeather({ 
      type,   title, 
@@ -72,18 +73,18 @@ function CurrentWeather({
                // // setUnit(UnitData);
 
                setCurrentUnit({
-                    temperature: weather.current_units.temperature_2m,
-                    feelsLike: weather.current_units.apparent_temperature,
-                    weatherCode: weather.current_units.weathercode,
-                    humidity: weather.current_units.relative_humidity_2m,
+                    temperature_2m: weather.current_units.temperature_2m,
+                    apparent_temperature: weather.current_units.apparent_temperature,
+                    weathercode: weather.current_units.weathercode,
+                    relative_humidity_2m: weather.current_units.relative_humidity_2m,
                     precipitation: weather.current_units.precipitation,
-                    windSpeed: weather.current_units.windspeed_10m,
-                    windDirection: weather.current_units.winddirection_10m,
-                    windGusts: weather.current_units.windgusts_10m,
-                    pressure: weather.current_units.pressure_msl,
-                    cloudCover: weather.current_units.cloudcover,
-                    uvIndex: weather.current_units.uv_index,
-                    dewPoint: weather.current_units.dewpoint_2m,
+                    windspeed_10m: weather.current_units.windspeed_10m,
+                    winddirection_10m: weather.current_units.winddirection_10m,
+                    windgusts_10m: weather.current_units.windgusts_10m,
+                    pressure_msl: weather.current_units.pressure_msl,
+                    cloudcover: weather.current_units.cloudcover,
+                    uv_index: weather.current_units.uv_index,
+                    dewpoint_2m: weather.current_units.dewpoint_2m,
                     snowfall: weather.current_units.snowfall
                });
 
@@ -101,6 +102,9 @@ function CurrentWeather({
      useEffect(() => {
           WeatherSet();
      }, []);
+
+     console.log("Weather Object", weather);
+     
      
 
      const otherInfoWidgets = LiveWeather && CurrentUnit ? [
@@ -143,7 +147,7 @@ function CurrentWeather({
      ] : [];
 
 
-     // if (weather){
+     // if (!loading) if (weather){
      // console.log("Live Weather", LiveWeather);
      // console.log("Current Units", CurrentUnit);
      // }
@@ -169,9 +173,10 @@ function CurrentWeather({
                                    <div className='real'>{LiveWeather.temperature}{CurrentUnit.temperature_2m}</div>
                                    <div className='feels_like'>feels like {LiveWeather.feelsLike}{CurrentUnit.apparent_temperature}</div>
                                    <div className='summary'>{LiveWeather.summary}</div>
-                                   <div>{place}</div>
                               </div>
                          </div>
+
+                         <LiveDateTime />
 
                          <SunriseSunset data={weather} />
                     </>
