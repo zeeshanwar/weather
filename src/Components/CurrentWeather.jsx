@@ -20,10 +20,6 @@ function CurrentWeather({
      CurrentUnit, setCurrentUnit,
      loading, setLoading }) {
 
-     // const [city, setCity] = useState("Delhi");
-     // const [weather, setWeather] = useState(null);
-     // const [unit, setUnit] = useState(null);
-     // const [loading, setLoading] = useState(false);
 
      const getWindDirection = (degree) => {
           const directions = ["North", "NE", "East", "SE", "South", "SW", "West", "NW"];
@@ -53,22 +49,6 @@ function CurrentWeather({
                     snowfall: weather.current.snowfall,
                     summary: getWeatherSummary(weather.current.weathercode)
                });
-               // setLiveWeather({
-               //      temperature: LiveWeather.temperature_2m,
-               //      feelsLike: LiveWeather.apparent_temperature,
-               //      weatherCode: LiveWeather.weathercode,
-               //      humidity: LiveWeather.relative_humidity_2m,
-               //      precipitation: LiveWeather.precipitation,
-               //      windSpeed: LiveWeather.windspeed_10m,
-               //      windDirection: getWindDirection(LiveWeather.winddirection_10m), 
-               //      windGusts: LiveWeather.windgusts_10m,
-               //      pressure: LiveWeather.pressure_msl,
-               //      cloudCover: LiveWeather.cloudcover,
-               //      uvIndex: LiveWeather.uv_index,
-               //      dewPoint: LiveWeather.dewpoint_2m,
-               //      snowfall: LiveWeather.snowfall,
-               //      summary: getWeatherSummary(LiveWeather.weathercode)
-               // });
 
                // // setUnit(UnitData);
 
@@ -91,21 +71,15 @@ function CurrentWeather({
           } catch (error) {
                console.error("Error fetching weather:", error);
                setWeather(null);
-               // console.log("error in weatherset");
                
           } finally {
                // setLoading(false);
-               // console.log("finally weatherset");
           }
      };
 
      useEffect(() => {
           WeatherSet();
      }, []);
-
-     console.log("Weather Object", weather);
-     
-     
 
      const otherInfoWidgets = LiveWeather && CurrentUnit ? [
           {
@@ -151,6 +125,7 @@ function CurrentWeather({
      // console.log("Live Weather", LiveWeather);
      // console.log("Current Units", CurrentUnit);
      // }
+     console.log("Weather Object", weather);
 
 
      return (

@@ -1,11 +1,12 @@
 $height: 250px;
+$smallscreen: 750px;
 
 .CurrentWeather {
   display: flex;
   flex-direction: row;
   gap: 20px;
 
-  @media screen and (max-width: 745px) {
+  @media screen and (max-width: $smallscreen) {
     flex-direction: column;
   }
 
@@ -42,7 +43,7 @@ $height: 250px;
     align-items: center;
     flex-wrap: wrap;
 
-    @media screen and (max-width: 745px) {
+    @media screen and (max-width: $smallscreen) {
       margin-left: 0;
       margin-top: 1rem;
     }

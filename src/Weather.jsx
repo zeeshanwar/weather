@@ -1,23 +1,34 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import './styles/components/App.scss';
 import 'bootstrap-icons/font/bootstrap-icons.css';
+// import WeatherContext from '../Contexts/WeatherContext';
+import WeatherContext from "./Contexts/WeatherContext";
 import Header from "./Components/Header";
 import Body from "./Components/Body";
+import Loading from "./Components/Loading";
 
 export default function Weather() {
 
-    const [theme, setTheme] = useState("dark");
-    const [loading, setLoading] = useState(true);
+    const { loading, weather } = useContext(WeatherContext);
 
     return (
         <>
-            <div className={`App-${theme}`}>
+            {loading ? (
 
-                <Header />
-                <Body loading="loading" setLoading="setLoading"/>
-            </div>
-        
+                <Loading />
+
+            ) : weather ? (
+
+                <>
+                    <Header />
+                    <Body />
+                </>
+
+            ) : (
+                <p>Error fetching weather data.</p>
+            )}
+
         </>
     )
 }

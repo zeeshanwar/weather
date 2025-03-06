@@ -54,7 +54,6 @@ function Search() {
         }
       }
 
-
       setSearchResults(results);
       setOpenSearchResults(results.length > 0);
     }, 300), // 300ms debounce delay
