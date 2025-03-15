@@ -1,5 +1,6 @@
 import React from 'react'
 import '../styles/components/Loading.scss';
+import WeatherContext from '../Contexts/WeatherContext';
 
 
 function Loading() {
@@ -13,6 +14,7 @@ function Loading() {
             alt="Loading"
             className=''
          />
+         <p>Loading...</p>
       </div>
    )
 }

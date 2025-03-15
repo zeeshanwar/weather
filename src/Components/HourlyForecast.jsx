@@ -3,12 +3,12 @@ import '../styles/components/Forecast.scss';
 import WeatherIcon from '../IconComponents/WeatherIcon';
 import ForecastIcon from '../IconComponents/ForecastIcon';
 
-function HourlyForecast({ name, data, units }) {
+function HourlyForecast({ name, data, units, timezone }) {
 
    const { time, temperature_2m, visibility, windspeed_10m, relative_humidity_2m, pressure_msl, cloudcover, precipitation, weathercode } = data;
-   
+
    // console.log(data);
-   
+
 
    const HourNow = new Date().getHours();
    const CurrentHour = data.time.findIndex(time => new Date(time).getHours() >= HourNow);
@@ -46,12 +46,15 @@ function HourlyForecast({ name, data, units }) {
          WeatherCode: weathercode[index]
       };
    });
+   
+   // console.log(formattedForecast);
+   
 
 
    return (
 
       <div className='forecast-box'>
-         {formattedForecast.map((forecast) => (
+         {formattedForecast.slice(0, 48).map((forecast) => (  //48 hr forecast
             <div key={forecast.id} className='forecast-widget'>
                <div className="day">
                   {forecast.date}
@@ -60,9 +63,21 @@ function HourlyForecast({ name, data, units }) {
                   {forecast.time}
                </div>
                <div className="icon-temp">
+                  
+                     {/* <WeatherIcon
+                        // key={index}
+                        icon={forecast.WeatherCode}
+                        name="Hourly Weather"
+                        size="65"
+                        type="Hourly"
+                        time={forecast.time}  // ✅ API hourly time
+                        timezone={timezone}  // ✅ API timezone
+                     /> */}
+
                   <WeatherIcon icon={forecast.WeatherCode} name={forecast.id} size="65" type="Hourly"/>
+                  
                </div>
-                  <div className="temperature">{forecast.temperature}{units.temperature_2m}</div>
+               <div className="temperature">{forecast.temperature}{units.temperature_2m}</div>
                <div className="details">
                   <div className='icon-info'><ForecastIcon icon="windy" name="windy" size="25" /> {forecast.windSpeed} {units.windspeed_10m}</div>
                   <div className='icon-info'><ForecastIcon icon="humidity" name="windy" size="25" /> {forecast.humidity} {units.relative_humidity_2m}</div>

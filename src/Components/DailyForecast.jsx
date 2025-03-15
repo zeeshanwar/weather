@@ -3,10 +3,10 @@ import '../styles/components/Forecast.scss';
 import WeatherIcon from '../IconComponents/WeatherIcon';
 import ForecastIcon from '../IconComponents/ForecastIcon';
 
-function DailyForecast({ name, data, units }) {
+function DailyForecast({ name, data, units, timezone }) {
 
   const { time, temperature_2m_max, temperature_2m_min, precipitation_sum, snowfall_sum, windspeed_10m_max, uv_index_max, sunrise, sunset, weathercode } = data;
-  
+
   // Process daily forecast data
   const formattedForecast = time.map((date, index) => {
     const dateObject = new Date(date);
@@ -52,7 +52,19 @@ function DailyForecast({ name, data, units }) {
         <div key={forecast.id} className='forecast-widget'>
           <div className="day">{forecast.date}</div>
           <div className="icon-temp">
+            
+              {/* <WeatherIcon
+                // key={index}
+                icon={forecast.weatherCode}
+                name={forecast.id}
+                size="65"
+                type="Daily"
+                time={forecast.time}  // ✅ API daily time
+                timezone={timezone}  // ✅ API timezone
+              /> */}
+
             <WeatherIcon icon={forecast.weatherCode} name={forecast.id} size="65" type="Daily"/>
+            
           </div>
           <div className="temperature">{forecast.maxTemp}°C / {forecast.minTemp}°C</div>
 

@@ -139,7 +139,14 @@ function CurrentWeather({
                               <div className='weather-icon'>
                                    {LiveWeather.weatherCode !== undefined ? 
                                    (
-                                        <WeatherIcon icon={LiveWeather.weatherCode} name="Weather Icon" size="100" type="Current" />
+                                        <WeatherIcon 
+                                        icon={LiveWeather.weatherCode}
+                                        name="Weather Icon" 
+                                        size="100" 
+                                        type="Current"
+                                        time={LiveWeather.time}
+                                        timezone={LiveWeather.timezone} 
+                                        />
                                    ) : (
                                         <p>No icon available</p>
                                    )}

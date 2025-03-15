@@ -10,6 +10,7 @@ function Body() {
 
   const {loading, setLoading} = useContext(WeatherContext);
   const {weather, setWeather} = useContext(WeatherContext);
+  const {timezone, setTimeZone} = useContext(WeatherContext);
   const {LiveWeather, setLiveWeather} = useContext(WeatherContext);
   const {place, setPlace} = useContext(WeatherContext);
   const {unit, setUnit} = useContext(WeatherContext);
@@ -47,12 +48,14 @@ function Body() {
             type="hourly"
             title="48 HOUR FORECAST"
             weather={weather.hourly}
+            timezone={timezone}
             unit={HourlyUnit}
           />
           <Forecast
             type="daily"
             title="15 DAYS FORECAST"
             weather={weather.daily}
+            timezone={timezone}
             unit={DailyUnit}
           />
         </>
