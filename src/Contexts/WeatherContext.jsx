@@ -18,6 +18,7 @@ function WeatherProvider({ children }) {
   const [storedLocations, setStoredLocations] = useState({}); // ✅ Keep track of searched locations
 
   async function FetchWeather() {
+
     setLoading(true);
     try {
       const geoRes = await axios.get(
