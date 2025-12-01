@@ -10,7 +10,7 @@ $smallscreen: 750px;
     flex-direction: column;
   }
 
-  .temperature,
+  .temperature, .live-datetime, .sun-container,
   .other-infos {
     padding: 1rem;
     border: 1px solid var(--secondary-text-color);
@@ -20,6 +20,7 @@ $smallscreen: 750px;
   .temperature {
     width: 300px;
     height: auto;
+    border: none;
 
     .value {
       .real {
