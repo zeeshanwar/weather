@@ -1,5 +1,6 @@
 import React from 'react'
 import '../styles/components/Loading.scss';
+import '../styles/components/Blink.scss';
 import WeatherContext from '../Contexts/WeatherContext';
 
 
@@ -14,7 +15,7 @@ function Loading() {
             alt="Loading"
             className=''
          />
-         <p>Loading...</p>
+         <p className='blink'>Loading...</p>
       </div>
    )
 }
