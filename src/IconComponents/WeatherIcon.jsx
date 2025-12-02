@@ -28,7 +28,7 @@ function WeatherIcon({ icon, name, size, type, time, timezone }) {
   }
 
   return (
-    <img src={`/src/icons/animated/${iconcode}.svg`} alt={name} width={size} height={size} />
+    <img src={`/icons/animated/${iconcode}.svg`} alt={name} width={size} height={size} />
   );
 }
 
