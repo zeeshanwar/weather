@@ -21,7 +21,7 @@ const SunriseSunset = ({ data }) => {
          
          <div className="sun-box">
             <h2>Sunrise</h2>
-            <img src={`/src/icons/static/sunrise-animated.gif`} alt="Sunrise" className="sun-icon" />
+            <img src={`/icons/static/sunrise-animated.gif`} alt="Sunrise" className="sun-icon" />
             <div className="sun-time">{sunrise}</div>
          </div>
 
@@ -29,7 +29,7 @@ const SunriseSunset = ({ data }) => {
          
          <div className="sun-box">
             <h2>Sunset</h2>
-         <img src={`/src/icons/static/sunset-animated.gif`} alt="Sunset" className="sun-icon" />
+         <img src={`/icons/static/sunset-animated.gif`} alt="Sunset" className="sun-icon" />
             <div className="sun-time">{sunset}</div>
          </div>
       </div>
