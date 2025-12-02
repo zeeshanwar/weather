@@ -8,7 +8,7 @@ function Loading() {
    return (
       <div className='loading-container'>
          <img
-            src="/src/icons/weather.gif"
+            src="/icons/weather.gif"
             width="350"
             height="350"
             alt="Loading"
